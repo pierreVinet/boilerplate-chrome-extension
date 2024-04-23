@@ -1,18 +1,25 @@
 import { useState, useEffect } from 'react'
 
 import './SidePanel.css'
+import { getData } from '../background'
+import { MessageRequestType, StorageKey } from '../types'
 
 const SidePanel = () => {
   const [countSync, setCountSync] = useState(0)
 
   useEffect(() => {
-    // chrome.storage.sync.get(['count'], (result) => {
-    //   setCountSync(result.count || 0)
-    // })
+    getData(StorageKey.COUNT, (result) => {
+      setCountSync(result || 0)
+    })
 
-    chrome.runtime.onMessage.addListener((request) => {
-      if (request.type === 'COUNT') {
-        setCountSync(request.count || 0)
+    console.log('Message received side panellllll')
+
+    chrome.runtime.onMessage.addListener((request, sender, response) => {
+      console.log('Message received side panel:', request)
+      if (request.type === MessageRequestType.COUNT) {
+        console.log('Message received side panel:', request.data.count)
+        response('Message received')
+        setCountSync(request.data.count || 0)
       }
     })
   }, [])
@@ -20,7 +27,7 @@ const SidePanel = () => {
   return (
     <main className="w-full flex flex-col items-center justify-center gap-4 h-screen bg-50">
       <h3 className="font-bold text-3xl">SidePanel Page</h3>
-      <h4>Count from Popup: {countSync}</h4>
+      <p>Count from Popup: {countSync}</p>
     </main>
   )
 }

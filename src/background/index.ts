@@ -86,6 +86,12 @@ const main = async () => {
       response({ status: 'Received' })
 
       await chrome.tabs.create({ url: `newtab.html` })
+    } else if (request.type === MessageRequestType.OPEN_SIDE_PANEL) {
+      response({ status: 'Received' })
+
+      await chrome.sidePanel.open({
+        tabId: request.data.tabId as number,
+      })
     }
   })
 }
