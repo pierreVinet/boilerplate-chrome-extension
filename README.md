@@ -1,6 +1,8 @@
-# twitter-ext
+# Chrome Extension Boilerplate
 
-> a chrome extension tools built with Vite + React, and Manifest v3
+> a chrome extension tools built with Vite + React, Typescript, Tailwind and Manifest v3
+
+Original version [Github](https://github.com/guocaoyi/create-chrome-ext)
 
 ## Installing
 
