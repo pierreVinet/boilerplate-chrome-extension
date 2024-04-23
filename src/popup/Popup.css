@@ -1,0 +1,33 @@
+@media (prefers-color-scheme: light) {
+  a:hover {
+    color: #61dafb;
+  }
+}
+
+.label-dark {
+  @apply bg-100 text-base rounded-md px-4 py-[2px] select-none;
+}
+
+.button-dark {
+  @apply rounded-md px-2 py-[2px] bg-100 text-sm border-[1px] border-white/20 hover:border-white/50 hover:bg-200 duration-100;
+}
+
+.button-selected {
+  @apply outline-blue-500 outline outline-[1px];
+}
+
+.button-send {
+  @apply rounded-md px-3 py-1 bg-blue-500/80 font-medium text-sm text-white hover:bg-blue-500 duration-100;
+}
+
+.button-send-disabled {
+  @apply rounded-md px-3 py-1 bg-blue-700/80 font-medium text-sm text-white/50;
+}
+
+.input-dark {
+  @apply bg-100 text-sm rounded-md pl-2 py-[2px] text-center focus:outline focus:outline-[1px] outline-blue-500  border-[1px] hover:bg-200 border-white/20 focus:border-white/50 placeholder-white/30;
+}
+
+.label-low {
+  @apply text-sm opacity-80;
+}
