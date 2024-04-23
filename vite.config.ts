@@ -11,9 +11,6 @@ export default defineConfig(({ mode }) => {
       emptyOutDir: true,
       outDir: 'build',
       rollupOptions: {
-        input: {
-          newtab: path.resolve(__dirname, './newtab.html'), // Adjust the path as necessary
-        },
         output: {
           chunkFileNames: 'assets/chunk-[hash].js',
         },

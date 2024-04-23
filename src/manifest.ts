@@ -29,11 +29,15 @@ export default defineManifest({
       js: ['src/contentScript/index.tsx'],
     },
   ],
+  options_page: 'newtab.html',
+  side_panel: {
+    default_path: 'sidepanel.html',
+  },
   web_accessible_resources: [
     {
       resources: ['img/logo-16.png', 'img/logo-32.png', 'img/logo-48.png', 'img/logo-128.png'],
       matches: [],
     },
   ],
-  permissions: ['storage', 'tabs'],
+  permissions: ['storage', 'tabs', 'sidePanel'],
 })
