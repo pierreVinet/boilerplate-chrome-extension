@@ -3,6 +3,10 @@ import { MessageRequestType } from '../types'
 
 console.log('background is running')
 
+chrome.sidePanel
+  .setPanelBehavior({ openPanelOnActionClick: true })
+  .catch((error) => console.error(error))
+
 // Function to  send a message to the contentScript
 async function sendMessageToActiveTab(message: any, callback?: any) {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true })

@@ -16,7 +16,7 @@ export default defineManifest({
     128: 'img/logo-128.png',
   },
   action: {
-    default_popup: 'popup.html',
+    default_title: 'Sidepanel',
     default_icon: 'img/logo-48.png',
   },
   background: {
@@ -29,7 +29,7 @@ export default defineManifest({
       js: ['src/contentScript/index.tsx'],
     },
   ],
-  options_page: 'newtab.html',
+  // options_page: 'newtab.html',
   side_panel: {
     default_path: 'sidepanel.html',
   },
